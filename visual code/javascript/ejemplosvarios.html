@@ -2,15 +2,28 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>bubles</title>
   </head>
   <body>
-
+    <h1>mi lista de la compra</h1>
+    <input id="txtarticulo" type="text" name="" value="">
+    <button id="btnañadir" type="button" name="button" onclick=""> añadir producto</button>
   </body>
 
     <script type="text/javascript">
 
-      /*var diasemana = new Date();
+      var listacompra = []
+    
+      function añadirproducto() {
+        var producto = document.getElementById("txtarticulo").value;
+   
+        listacompra.push(producto);
+        alert(listacompra);
+      }
+      
+
+
+    /*  var diasemana = new Date();
 
       switch (diasemana) {
 
@@ -25,7 +38,8 @@
         case 3:
         alert("miercoles");
         break;
-      } */
+      }
+      
 
       var hora = new Date().getHours();
       hora = 12;
@@ -37,7 +51,8 @@
       }
       else {
         alert("no");
-      }
-      
+      } 
+      */
+
     </script>
 </html>

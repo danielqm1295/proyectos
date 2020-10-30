@@ -1,0 +1,32 @@
+li a {
+    color: black;
+}
+
+a:hover {
+    color: red;
+    background-color: yellow;
+}
+
+div.contenedor1 {
+    background-color: red;
+}
+
+div.contenedor1:hover {
+    background-color: green;
+}
+
+div.contenedor2 {
+    background: gray;
+}
+
+div.contenedor2:hover {
+    background-color: green;
+}
+
+div.contenedor1 img {
+    display: none;
+}
+
+div.contenedor1:hover img {
+    display: block;
+}

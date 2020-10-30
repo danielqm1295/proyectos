@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>switch</title>
+  </head>
+
+  <body>
+      <h1>menu</h1>
+          <ol>
+              <li>saluda</li>
+              <li>suma</li>
+              <li>resta</li>
+          </ol>
+      opcion:<input id="txtopcion" type="text" onchange="cogeropcion()">
+  </body>
+
+  <script type="text/javascript">
+    function cogeropcion() {
+        var opcion =document.getElementById("txtopcion").value;
+        switch (opcion) {
+           
+            case "1": 
+            alert("hola");
+            break;
+           
+            case "2": 
+            alert("suma" + (2+2));
+            break;
+           
+            case "3": 
+            alert("resta" + (2-2));
+            break;
+        default:
+        alert("opcion no valida");
+        }
+    }
+  </script>
+</html>

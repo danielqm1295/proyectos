@@ -1,0 +1,12 @@
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    font: italic bold 12px/30px georgia, serif;
+}
+
+@font-face {
+    font-family: lettersketch;
+    src: url(fonts/lettersketch.ttf);
+}

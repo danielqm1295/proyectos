@@ -13,6 +13,7 @@
             this.kms = kms;
             this.arrancado = arrancado;
         }
+
     arrancar() {
         this.arrancado = true;
     }
@@ -21,9 +22,9 @@
         this.arrancado = false;
     }
 
-    toString () {
+    toString ()  { var resultado;
         for (var propiedad in this) {
-            if (this.HasOwnProperty(propiedad)) {
+            if (this.hasOwnProperty(propiedad)) {
                 resultado += propiedad + " = " + this[propiedad] + " , "
             } 
         }

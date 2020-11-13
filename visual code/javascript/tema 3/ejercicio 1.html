@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    class coche {
+        constructor (modelo, color, kms, arrancado) {
+            this.modelo = modelo;
+            this.color = color;
+            this.kms = kms;
+            this.arrancado = arrancado;
+        }
+    arrancar() {
+        this.arrancado = true;
+    }
+
+    apagar() {
+        this.arrancado = false;
+    }
+
+    toString () {
+        for (var propiedad in this) {
+            if (this.HasOwnProperty(propiedad)) {
+                resultado += propiedad + " = " + this[propiedad] + " , "
+            } 
+        }
+        return resultado;
+      }
+    }
+     var renault = new coche ("renault", "rojo", "5000", "false")
+        console.dir(renault);
+        //alert (renault);
+
+        var copiarenault = renault;
+
+        copiarenault.arrancar();
+        alert("copiarenault ->" + copiarenault);
+        alert("renault ->" + renault);
+    </script>
+  </body>
+</html>

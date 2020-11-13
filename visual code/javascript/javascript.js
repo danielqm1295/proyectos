@@ -1,3 +1,0 @@
-function diAlgo() {
-  alert ("hola")
-}

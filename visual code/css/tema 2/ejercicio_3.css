@@ -1,0 +1,24 @@
+p {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media screen {
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 1px solid black;
+  }
+}
+
+@media print {
+  p {
+    color: red;
+  }
+  img {
+    width: 20%
+  }
+}

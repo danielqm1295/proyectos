@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>float</title>
+    
+    <style type="text/css">
+ 
+    .contenido-principal{
+        border: 1px solid red;
+        float: left;
+        width: 40%;
+    }
+
+    .contenido-secundario {
+        border: 1px solid royalblue;
+        text-align: center;
+        float: right;
+        width: 40%;
+    }
+
+    #logo1 {
+        float: left;
+        width: 4em;
+    }
+
+    #logo2 {
+        float: right;
+        width: 4em;
+    }
+
+    .pie {
+        border: 1px solid rgb(60, 0, 128);
+        overflow: auto;
+        clear: both;
+    }
+
+    #enlacevolver{
+        float: left;
+    }
+
+    #enlacesiguiente {
+        float: right;
+    }
+
+    .panel-navegacion li{
+        float: left;
+        border: 1px solid teal ;
+        padding: 1em;
+    }
+
+    .panel-navegacion {
+        overflow: auto;    
+    }
+
+    </style>
+</head>
+<body>
+    <ul class="panel-navegacion">
+    <li><a href="#home">Mercedes-Benz</a></li>
+    <li><a href="#f1team">F1 Team</a></li>
+    <li><a href="#pilotos">Pilotos</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <div class="contenido-principal">
+    <p >Mercedes-Benz, a través de su subsidiaria Mercedes-Benz Grand
+    Prix Limited , participa actualmente en la Fórmula Uno como constructor bajo el nombre de
+    Mercedes-AMG Petronas F1 Team. El equipo tiene su sede en Brackley, Northamptonshire , Reino
+    Unido , y utiliza una licencia alemana . Mercedes-Benz compitió en el Campeonato de Europa de
+    antes de la guerra ganando tres títulos y debutó en la Fórmula Uno en 1954 , dirigiendo un equipo
+    durante dos años. El equipo también es conocido por su apodo, las " Flechas de plata ".
+    </p>
+    </div>
+    <div class="contenido-secundario">
+    <img id='logo1' src="img/mercedes-logo.jpg" alt="why?">
+    <img id='logo2' src="img/mercedes-logo.jpg" alt="por que?">
+    <p >Además de su equipo de fábrica, Mercedes actualmente
+    suministra motores a Racing Point y Williams. El fabricante ha obtenido más de 180 victorias como
+    proveedor de motores y ocupa el segundo lugar en la historia de la Fórmula Uno. Se han ganado
+    siete campeonatos de constructores y 11 de pilotos con motores Mercedes-Benz.
+    </p>
+    </div>
+    <div class="pie">
+        <a href="#" id="enlacevolver">volver</a>
+        <a href="#" id="enlacesiguiente">siguiente</a>
+    </div>
+  </body>
+</html>

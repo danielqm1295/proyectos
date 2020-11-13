@@ -1,0 +1,14 @@
+p {
+  width: 25%;
+  padding: 20px;
+  border: 1px dotted red;
+  color: green;
+  font-family: verdana;
+  margin-left: 200px;
+}
+
+h1 {
+  width: 35%;
+  border: 3px solid blue;
+  padding: 10px;
+}

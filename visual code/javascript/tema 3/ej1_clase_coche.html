@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+  // Clase Coche //
+  class Coche {
+    constructor(modelo, color, kms) {
+      this.modelo = modelo;
+      this.color = color;
+      this.kms = kms;
+      this.arrancado = false;
+    }
+
+    arrancar() {
+      this.arrancado = true;
+    }
+
+    apagar() {
+      this.arrancado = false;
+    }
+	
+	// Recorre las propiedades de la instancia (accesible usando this) con un forin y va concatenando en una variable el resultado //
+    toString() {
+      var resultado = "";
+      for (var propiedad in this) {
+        if (this.hasOwnProperty(propiedad)) {
+          resultado += propiedad + " : " + this[propiedad] + ",";
+        }
+      }
+      return resultado;
+    }
+
+  }
+
+ 
+  // Instanciar, arrancar y mostrar CocheFormula //
+  var cocheFerrari = new Coche('ferrari', 'rojo', 0);
+  cocheFerrari.arrancar();
+  alert(cocheFerrari); // Javascript llama por defecto al metodo toString() del objeto para mostrarlo por pantalla//
+  
+  
+</script>

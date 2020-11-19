@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script type="text/javascript">
+  // Declaración de objetos Javascript, no recomendada por rendimiento //
+
+  var a = new String();
+  var b = new Number();
+  var c = new Boolean();
+
+  var cadena = "Hola soy cadena";
+  var cadenaObjeto = new String("Hola soy un objeto");
+  alert(typeof(cadena));
+  alert(typeof(cadenaObjeto));
+
+  // Las funciones en Javascript también son objetos //
+
+  function miFuncion() {}
+  alert(typeof(miFuncion));
+  console.dir(miFuncion);
+
+  // Recorriendo atributos de objetos con forin //
+  var objetoUsuario = {
+    nombre: "Felipe",
+    apellido: "Ranas",
+    edad: 30,
+    esAdmin: true
+  };
+
+  {
+    for (var atributo in objetoUsuario) {
+      if (objetoUsuario.hasOwnProperty(atributo)) {
+        alert(atributo + " : " + objetoUsuario[atributo]);
+      }
+    }
+  }
+
+  // Funcion constructora //
+
+  function usuario(nombre, apellido, edad, esAdmin) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.edad = edad;
+    this.esAdmin = esAdmin;
+  }
+
+  var miUsuario = new usuario('Victor', 'Fernanddez', 30, true);
+  alert(miUsuario.nombre); //Victor
+  alert(typeof(usuario)); //function
+  alert(typeof(miUsuario)); //object
+</script>

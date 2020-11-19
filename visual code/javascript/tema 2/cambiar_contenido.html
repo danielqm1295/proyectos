@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <p id="miParrafo">este es el texto original de parrafo</p>
+    <button type="button" name="button" onclick="cambiarParrafo()">cambiaTextoParrafo</button>
+
+  </body>
+
+  <script type="text/javascript">
+
+    function cambiarParrafo() {
+      console.log("me han llamado a la funcion cambiarParrafo")
+      var objparrafo = document.getElementById("miParrafo");
+      objparrafo.innerHTML = "este es el texto modificado";
+      console.log(objparrafo);
+      console.dir(objparrafo);
+      console.error("si sucediese un error lo muestras");
+    }
+
+  </script>
+</html>

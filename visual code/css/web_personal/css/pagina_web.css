@@ -9,4 +9,29 @@ h1 {
     font-size: 3em;
     letter-spacing: 10px;
     text-align: right;
+    margin: 0;
 } 
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-color: #325A73;
+}
+
+li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #9AC7D9;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #0D0D0D;
+  }

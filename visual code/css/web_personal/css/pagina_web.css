@@ -62,10 +62,28 @@ li {
     color: #9AC7D9;
    }
 
-  /* css para el pie de página */
+/* css para el pie de página */
 
-  img {
-    background-color: #325A73; 
-    padding: 12px;
-    display: block;
-  }
+footer {
+  background-color: #325A73;
+  ;
+}
+
+a.ibq {
+  display: block;
+  padding: 12px;
+  float: left;
+}
+
+.twitter {
+  padding: 12px;
+  width: 40px;
+  float: right;
+}
+
+.facebook {
+  padding: 12px;
+  width: 40px;
+  float: right;
+}
+

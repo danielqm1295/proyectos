@@ -66,11 +66,11 @@ li {
 
 footer {
   background-color: #325A73;
-  ;
 }
 
-a.ibq {
-  display: block;
+.ibq {
+  width: 70px;
+  height: 40px;
   padding: 12px;
   float: left;
 }

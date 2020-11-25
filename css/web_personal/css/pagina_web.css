@@ -2,7 +2,8 @@
 /* css para la cabezera*/
 
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display&display=swap');
-h1 {
+
+#nombre {
   padding-top: 1%;
   padding-bottom: 1%;
   background-image:url(../img/fondo-matriz-digital-abstracto_34629-589.jpg);
@@ -18,10 +19,10 @@ h1 {
 /* css para la barra de navegacion*/
 
 ul{
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden; 
-    background-color: #325A73;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden; 
+  background-color: #325A73;
 }
 
 li {
@@ -66,24 +67,44 @@ li {
 
 footer {
   background-color: #325A73;
+  overflow: auto;
 }
 
 .ibq {
   width: 70px;
   height: 40px;
-  padding: 12px;
+  padding: 10px;
   float: left;
 }
 
 .twitter {
-  padding: 12px;
+  padding: 10px;
   width: 40px;
   float: right;
 }
 
 .facebook {
-  padding: 12px;
+  padding: 10px;
   width: 40px;
   float: right;
 }
 
+/* css para el formulario de contacto*/
+
+h1 {
+  text-align: center;
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  letter-spacing: 3px;
+  color: #9AC7D9;
+  font-size: 2em;
+}
+
+section {
+  float: right;
+  background-color: #0D0D0D;
+  padding: 10px;
+}
+
+input {
+  margin: 5px;
+}

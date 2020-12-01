@@ -67,6 +67,7 @@ li {
 
 footer {
   background-color: #325A73;
+  clear: both;
   overflow: auto;
 }
 
@@ -91,6 +92,12 @@ footer {
 
 /* formulario de contacto */
 
+section {
+  float: right;
+  background-color: #0D0D0D;
+  padding: 10px;
+}
+
 h1 {
   text-align: center;
   font-family: 'Big Shoulders Stencil Display', cursive;
@@ -99,16 +106,9 @@ h1 {
   font-size: 2em;
 }
 
-section {
-  float: right;
-  background-color: #0D0D0D;
-  padding: 10px;
-}
-
 input {
   margin: 5px;
-  font-style: oblique
-  ;
+  font-style: oblique;
 }
 
 input:focus {
@@ -129,6 +129,11 @@ input:focus {
 }
 
 /* contenido de la pagina principal */
+
+article {
+  float: left;
+  background-color: #9AC7D9;
+}
 
 .presentacion {
   color: #0D0D0D;

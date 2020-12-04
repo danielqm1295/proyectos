@@ -114,6 +114,12 @@ input {
 input:focus {
   background-color: #9AC7D9;
 }
+hr {
+  height: 0.5px;
+  background-color: rgb(0, 0, 0);
+  margin-top: 5mm;
+  margin-bottom: 5mm;
+}
 
 .submit {
   color: #9AC7D9;

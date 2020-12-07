@@ -67,7 +67,6 @@ li {
 
 footer {
   background-color: #325A73;
-  clear: both;
   overflow: auto;
 }
 
@@ -107,18 +106,14 @@ h1 {
 }
 
 input {
-  margin: 5px;
   font-style: oblique;
+  margin-right: auto;
+  margin-left: auto;
+  display: block
 }
 
 input:focus {
   background-color: #9AC7D9;
-}
-hr {
-  height: 0.5px;
-  background-color: rgb(0, 0, 0);
-  margin-top: 5mm;
-  margin-bottom: 5mm;
 }
 
 .submit {
@@ -126,7 +121,7 @@ hr {
   background-color: #325A73;
   margin-right: auto;
   margin-left: auto;
-  display: block;
+  display: block
 }
 
 .submit:hover {
@@ -137,9 +132,8 @@ hr {
 /* contenido de la pagina principal */
 
 article {
- 
   background-color: #9AC7D9;
-  padding-left: 3%; float: left;
+  padding-left: 3%;
   padding-bottom: 12%;
   padding-right: 15%;
   text-align: justify;
@@ -147,20 +141,26 @@ article {
 
 .presentacion {
   color: #0D0D0D;
-  text-align: left;
 }
 
 #columnas {
   display: grid;
   grid-template-columns: 4fr 1fr;
 }
+
 b {
   font-weight: 900;
 }
 
-#me {
+#yo {
   width: 50px;
   float: left;
   height: auto;
   padding-right: 5mm;
+}
+
+hr {
+  height: 0.5px;
+  margin-top: 5mm;
+  margin-bottom: 5mm;
 }

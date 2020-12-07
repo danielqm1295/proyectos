@@ -42,14 +42,14 @@ li {
     color: rgba(4, 172, 166, 0.788);
   }
 
-  li a.principal {
+  li a.presentacion {
     background-color: rgba(4, 160, 155, 0.788);
     font-family: cursive;
     font-style: oblique;
     color: #9AC7D9;
   }
 
-    li a.educacion1 {
+    li a.educacion {
     background-color: rgba(4, 160, 155, 0.788);
     font-family: cursive;
     font-style: oblique;
@@ -139,7 +139,7 @@ article {
   text-align: justify;
 }
 
-.presentacion {
+.presentacion_titulo {
   color: #0D0D0D;
   font-family: 'Big Shoulders Stencil Display', cursive;
   letter-spacing: 2px;
@@ -181,7 +181,7 @@ article {
   padding-top: 2% ;
 }
 
-  .educacion2 {
+  .educacion_titulo {
     color: #0D0D0D;
     font-family: 'Big Shoulders Stencil Display', cursive;
     letter-spacing: 2px;
@@ -213,6 +213,17 @@ article {
 
 /* contenido de la pagina Aficiones */
 
+.tercera {
+  background-color: #9AC7D9;
+  padding-left: 5%;
+  padding-bottom: 2%;
+  padding-right: 15%;
+  padding-top: 2% ;
+}
 
-
+.aficiones_titulo {
+  color: #0D0D0D;
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  letter-spacing: 2px;
+}
   

@@ -7,7 +7,7 @@
   padding-top: 1%;
   padding-bottom: 1%;
   background-image:url(../img/fondo-matriz-digital-abstracto_34629-589.jpg);
-  background-color: black;
+  background-color: #0D0D0D;
   color: #9AC7D9;
   font-family: 'Big Shoulders Stencil Display', cursive;
   font-size: 3em;
@@ -39,7 +39,7 @@ li {
   li a:hover {
     background-color: #0D0D0D;
     font-family: cursive;
-    color: rgba(4, 172, 166, 0.788);
+    color: rgba(4, 160, 155, 0.788);
   }
 
   li a.presentacion {
@@ -169,6 +169,7 @@ article {
 
   p:first-line {
     font-family: 'Nerko One', cursive;
+    font-weight: 100;
   }
 
 /* contenido de la pagina Educacion */
@@ -216,7 +217,7 @@ article {
 .tercera {
   background-color: #9AC7D9;
   padding-left: 5%;
-  padding-bottom: 2%;
+  padding-bottom: 10%;
   padding-right: 15%;
   padding-top: 2% ;
 }
@@ -226,4 +227,16 @@ article {
   font-family: 'Big Shoulders Stencil Display', cursive;
   letter-spacing: 2px;
 }
-  
+
+.lista_aficiones {
+  list-style-type: circle;
+  font-weight: bold;
+}
+
+img {
+  width: 100px;
+  height: auto;
+  padding-right: 10px;
+  padding-top: 3px;
+  float: left;
+}

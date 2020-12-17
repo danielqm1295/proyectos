@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Examen</title>
+    <script src="./biblioteca.js"></script>
+    <button  onclick=""></button>
+  </head>
+  <body onload="iniciar()">
+    <div id="contenedor">
+
+    </div>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+
+        /*function iniciar() {
+        console.log(biblioteca);
+    
+        var bibliotecaHTML = "";
+
+        biblioteca.forEach((libro) => {
+           bibliotecaHTML += element.generarHTML();
+           bibliotecaHTML += libro.generarHTMLLibro();
+        });
+
+        //recorriendo con for tradicional
+        for (var i = 0; i < biblioteca.length; i++) { 
+        console.log(biblioteca[i].generarHtml());
+        bibliotecaHTML += biblioteca[i].generarHTML(); 
+        } 
+    }*/
+
+function mostrarBiblio(){
+    // 1- recupera el valor del genero input text
+    var genero = document.getElementById("txtgenero").value;
+    // 2- genera el html de los libros que tengan ese genero
+    var bibliotecaHTML = "";
+    bibliteca.forEach((libro) => {
+        bibliotecaHTML += libro.generarHTMLLibro();
+    });
+    // 3- modifica el innerHTML del contenedor con el html genero 
+    document.getElementById("contenedor").innerHTML = bibliotecaHTML;  
+}
+
+</script>

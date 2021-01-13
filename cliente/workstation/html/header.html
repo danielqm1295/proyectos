@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Header</title>
+  <script type="text/javascript">
+    function getMensajeFecha() {
+      let meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+      let diasSemana = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+      let f = new Date();
+      let fechaString = (diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+      let saludo = "";
+      if (f.getHours() > 12 && f.getHours() < 21) {
+        saludo = "Buenas tardes, hoy es ";
+      } else {
+        if (f.getHours() > 21 && f.getHours() < 6) {
+          saludo = "Buenas noches, hoy es ";
+        } else {
+          saludo = "Buenos días, hoy es ";
+        }
+      }
+      return saludo + fechaString;
+    }
+
+    function cargarDatos() {
+      document.getElementById("mensajeFecha").innerHTML = getMensajeFecha();
+    }
+  </script>
+
+</head>
+
+<body onload="cargarDatos()">
+  <p id="mensajeFecha"></p>
+</body>
+
+</html>

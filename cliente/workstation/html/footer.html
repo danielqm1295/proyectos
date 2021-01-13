@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Footer</title>
+</head>
+
+<body onload="inicioPagina()">
+
+  <h1 id="reloj"></h1>
+
+</body>
+
+<script type="text/javascript">
+  /** Obtiene la hora en formato hh:mm:ss **/
+  function getHora() {
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+
+    // completamos con ceros a la izquierda para formatear hh:mm:ss //
+    if (h < 10) {
+      h = "0" + h;
+    }
+
+    if (m < 10) {
+      m = "0" + m;
+    }
+
+    if (s < 10) {
+      s = "0" + s;
+    }
+    return h + ":" + m + ":" + s;
+  }
+
+  /** Funcion ejecutada al inicio de la pagina (onload) **/
+  function inicioPagina() {
+
+    // Establece un intervalo temporal de ejecucion de la funcion repetidamente //
+    window.setInterval(function() {
+      document.getElementById("reloj").innerHTML = getHora();
+    }, 500);
+
+  }
+</script>
+
+</html>

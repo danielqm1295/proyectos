@@ -15,5 +15,5 @@ try {
       print_r($res->getInsertedIds());
         }  catch (Exception $e) {
             print ($e);
-      }
+      } 
     

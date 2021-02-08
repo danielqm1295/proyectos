@@ -1,6 +1,8 @@
 .contenedor {
     display: flex;
-    background-color: rgb(126, 75, 9)
+    flex-direction: row;
+    justify-content:start;
+    background-color: rgb(126, 75, 9);
 }
 
 .contenedor img {

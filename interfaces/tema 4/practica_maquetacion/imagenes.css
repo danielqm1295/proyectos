@@ -1,8 +1,13 @@
 .contenedor {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    justify-content:start;
     background-color: rgb(126, 75, 9);
+}
+
+#cabecera {
+    flex: 1 100%;
+    height: 150px;
 }
 
 .contenedor img {

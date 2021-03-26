@@ -31,7 +31,7 @@ li {
   
   li a {
     display: block;
-    color: #9AC7D9;
+    color: white;
     padding: 12px;
     text-decoration: none;
   }
@@ -39,28 +39,28 @@ li {
   li a:hover {
     background-color: #0D0D0D;
     font-family: cursive;
-    color: rgba(4, 160, 155, 0.788);
+    color: white;
   }
 
   li a.presentacion {
-    background-color: rgba(4, 160, 155, 0.788);
+    background-color: rgb(76, 14, 100);
     font-family: cursive;
     font-style: oblique;
-    color: #9AC7D9;
+    color: white;
   }
 
     li a.educacion {
-    background-color: rgba(4, 160, 155, 0.788);
+    background-color: rgb(76, 14, 100);
     font-family: cursive;
     font-style: oblique;
-    color: #9AC7D9;
+    color: white;
   }
 
     li a.aficiones {
-    background-color: rgba(4, 160, 155, 0.788);
+    background-color: rgb(76, 14, 100);
     font-family: cursive;
     font-style: oblique;
-    color: #9AC7D9;
+    color: white;
   }
 
 /* pie de página */

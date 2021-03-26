@@ -89,6 +89,12 @@ footer {
     float: right;
   }
   
+  .home {
+    padding: 10px;
+    width: 40px;
+    float: right;
+  }
+
 /* formulario de contacto */
 
 .primera {
@@ -165,11 +171,6 @@ article {
     height: 0.5px;
     margin-top: 5mm;
     margin-bottom: 5mm;
-  }
-
-  p:first-line {
-    font-family: 'Nerko One', cursive;
-    font-weight: 100;
   }
 
 /* contenido de la pagina Educacion */

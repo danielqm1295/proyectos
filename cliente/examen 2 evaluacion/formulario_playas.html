@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Protocolo covid</title>
+    <style>
+        label {
+            display: block;
+            padding: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reserva de parcela</h1>
+    <form action="covid.php">
+
+        <label for="selectPlaya" title="Playa, obligatorio">
+            Playa *: 
+            <select id="selectPlaya">
+                <option value="0">Seleccione la playa..</option>
+                <option value="1">Playa de Peñarrubia</option>
+                <option value="2">Playa de LArbeyal</option>
+                <option value="3">Playa de Estaño</option>
+                <option value="4">Playa de San Lorenzo</option>
+                <option value="5">Playa de Serín</option>
+                <option value="6">Playa del Rinconín o El Cervigón</option>
+                <option value="7">Playa de La Cagonera</option>
+                <option value="8">Playa de los Mayanes</option>
+                <option value="9">Playa de Poniente o de Pando</option>     
+            </select>
+        </label>
+
+        <label for="inputPersonas" title="Nº personas, obligatorio, mínimo 1, máximo 4.">
+            Numero de personas *:<input type="text" id="inputPersonas" placeholder="Numero de personas" disabled>
+        </label>
+
+        <label for="checkComprometido" title="Comprometido covid">
+            Se compromete a cumplir protocolo Covid *: <input type="checkbox" id="checkComprometido" disabled>
+        </label>
+
+        <button type="button">Enviar</button>
+    </form>
+</body>
+
+</html>

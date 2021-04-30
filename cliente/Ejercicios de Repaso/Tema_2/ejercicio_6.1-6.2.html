@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 6</title>
+</head>
+<body onload = "cargandobody()">
+
+    <p>parrafo</p>
+
+    <label for="listaInstitutos" ></label>
+    <select class="" id="listaInstitutos" onchange = "cambiarvalor()">
+    <option value="in1" >IES Numero 1 (Gijón)</option>
+    <option value="ibq" selected="selected">IES Bernaldo de Quiros (Mieres)</option>
+    <option value="idf" >IES Dr Fleming (Oviedo)</option>
+    </select>
+    <p id="institutoSeleccionado">Codigo del instituto</p>
+
+    <script>
+        
+        function cargandobody() {
+            alert ("Cargando body!");
+        }
+
+        function cambiarvalor() {
+            alert ("valor cambiado");
+            var valorselecionado = document.getElementById("listaInstitutos").value;
+            document.getElementById("institutoSeleccionado").innerHTML = valorselecionado;
+            console.log(valorselecionado);
+        }
+    
+    </script>
+
+</body>
+</html>

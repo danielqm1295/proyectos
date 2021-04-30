@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrays</title>
+</head>
+
+<body>
+    <p id="parrafo"></p>
+</body>
+
+</html>
+
+<script>
+
+    var diasemana = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+    var resultado = "";
+
+    for (i=0; i<diasemana.length; i++) {
+        const dia = diasemana[i];
+
+        if (dia == "sabado" || dia == "domingo") {
+            resultado += "<h1>" + dia + "</h1>" + " . ";
+        }
+            else {
+                resultado += dia + " . ";
+            }        
+        }
+
+    document.getElementById("parrafo").innerHTML = resultado;
+</script>

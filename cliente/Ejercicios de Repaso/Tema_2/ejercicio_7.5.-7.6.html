@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mi lista de la compra:</h1>
+    <input id="txtproducto" type="text">
+    <button onclick="añadir()">añade el producto</button>
+    <ul id="listaCompra">
+
+    </ul>
+    <button onclick="borrarLista()">Borrar lista</button>
+</body>
+</html>
+
+<script>
+        var arrayProductos = [];
+
+        function añadir() {
+            var producto = document.getElementById("txtproducto").value;
+            arrayProductos.push(producto);
+            generarLista();
+        }
+
+        function generarLista() {
+            var codigoHTML = "";
+
+            for (let index = 0; index < arrayProductos.length; index++) {
+            const producto = arrayProductos[index];
+            codigoHTML += "<li>" + producto + "</li>"
+            }
+            document.getElementById("listaCompra").innerHTML = codigoHTML;
+        }
+
+        function borrarLista() {
+            arrayProductos = [];
+            generarLista();
+        }
+</script>

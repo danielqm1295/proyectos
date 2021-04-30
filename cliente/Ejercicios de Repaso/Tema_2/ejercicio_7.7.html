@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+    <ol>
+        <li>saludar</li>
+        <li>suma</li>
+        <li>resta</li>
+    </ol>
+    <p>Elija una opcion</p>
+    <input id="txtopcion" type="text"> 
+    <button onclick="tratarOpcion()">Aceptar</button>
+</body>
+</html>
+
+<script>
+    function tratarOpcion() {
+        //recuperar el valor del input que meta el usuario
+        var opcion = document.getElementById("txtopcion").value;
+        console.log(opcion);
+
+        switch (opcion) {
+            case "1":
+                alert("¡saludo!");
+                break;
+            case "2":
+                alert(2 + 2);
+                break;
+            case "3": 
+                alert(2 - 2);
+                break;
+
+            default:
+                alert("opcion incorrecta");
+                break;
+        }
+    }
+</script>

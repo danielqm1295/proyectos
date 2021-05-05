@@ -32,12 +32,12 @@
     /*Funcion invocada al cargar la pagina*/
     function cargarDatos() {
         construirTitulo();
-        pintarTabla();
+        generarTabla();
     }
 
     /* Funcion que rellena el html de la tabla con los datos de las asignaturas
      */
-    function pintarTabla() {
+    function generarTabla() {
 
         let htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th></tr>";
         for (var i = 0; i < asignaturas.length; i++) {
@@ -70,7 +70,7 @@
             let asignatura = asignaturas[i];
             sumaHoras += asignatura.horas;
         }
-        document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHorasAsignaturas + "h)";
+        document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";
     }
 </script>
 

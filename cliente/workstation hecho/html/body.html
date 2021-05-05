@@ -65,10 +65,10 @@
 
     /* Modifica el titulo con la suma de las horas de las asignaturas */
     function construirTitulo() {
-        var sumaHorasAsignaturas = 0;
+        var sumaHoras = 0;
         for (var i = 0; i < asignaturas.length; i++) {
             let asignatura = asignaturas[i];
-            sumaHorasAsignaturas += asignatura.horas;
+            sumaHoras += asignatura.horas;
         }
         document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHorasAsignaturas + "h)";
     }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>objetos</title>
+</head>
+
+<body onload="cargarCoche()">
+    <p id="parrafo"></p>
+    <p id="parrafoF1"></p>
+</body>
+
+</html>
+
+<script>
+    class coche {
+        constructor(modelo, color, kms, arrancado) {
+            this.modelo = modelo;
+            this.color = color;
+            this.kms = kms;
+            this.arrancado = arrancado;
+        }
+
+        arrancar() {
+            this.arrancado = true;
+        }
+
+        apagar() {
+            this.arrancado = false;
+        }
+
+        pintar(nuevoColor) {
+            this.color = nuevoColor;
+        }
+
+        tostring() {
+            return super.tostring() + " piloto: " + this.piloto + "y el patrocinador: " + this.patrocinador;
+        }
+    }
+
+    class cocheFormula1 extends coche {
+        constructor(modelo, color, kms, arrancado, piloto, patrocinador) {
+            super(modelo, color, kms, arrancado);
+            this.piloto = piloto;
+            this.patrocinador = patrocinador;
+        }
+
+    }
+
+    function cargarCoche() {
+
+        var megane = new coche("renaul", "rojo", "10000", false);
+        document.getElementById("parrafo").innerHTML = megane.modelo + " de color " + megane.color + " con " + megane.kms + "kms";
+
+        var mclaren = new cocheFormula1("mclaren", "amarillo", "5000", false, "Fernando Alonso", "ferrari");
+        document.getElementById("parrafoF1").innerHTML = mclaren.tostring();
+    }
+</script>

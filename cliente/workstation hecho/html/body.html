@@ -13,7 +13,7 @@
 </body>
 
 <script type="text/javascript">
-    var asignaturas = [{
+    var asignaturas = [ {
         codigo: "DWEC",
         nombre: "Desarrollo Web Entorno cliente",
         horas: 165,
@@ -27,7 +27,8 @@
         recursos: ['http://www.w3schools.com/w3css/defaulT.asp',
             'http://developer.mozilla.org/en-US/docs/Web/CSS/Reference',
         ]
-    }];
+      }
+    ];
 
     /*Funcion invocada al cargar la pagina*/
     function cargarDatos() {
@@ -52,7 +53,7 @@
             let celdaRecursos = "<td><ul>";
             for (var j = 0; j < asig.recursos.length; j++) {
 
-                celdaRecursos += "<li><a  target='_blank' href='" + asig.recursos[j] + "'>" + asig.recursos[j] + "</a></li>";
+                celdaRecursos += "<li><a  target='_blank' href=" + asig.recursos[j] + ">" + asig.recursos[j] + "</a></li>";
             }
             celdaRecursos += "</ul></td>";
 

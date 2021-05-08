@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Videoclub</title>
+
+  <script src="./videoclub.js" charset="utf-8"></script>
+
+</head>
+
+<body onload="cargar()">
+  <h1 style="border-bottom: 1px solid red;">Videoclub</h1>
+
+
+  <select id="selectAnios" onchange="mostrarPeliculaAnio(this.value)">
+    <option value="2010" selected="selected">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+  </select>
+
+
+  <div id="contenedor">
+
+  </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+  function cargar() {
+
+    var anio = localStorage.getItem("anio");
+    if (anio != undefined && anio != "undefined") {
+      document.getElementById("selectAnios").value = anio;
+      mostrarPeliculaAnio(anio);
+    } else {
+      mostrarPeliculaAnio("2010");
+    }
+  }
+
+  function mostrarPeliculaAnio(selectAnioValue) {
+
+    var html = "";
+    videoclub.forEach((pelicula, i) => {
+      if (selectAnioValue == pelicula.anio) {
+        html += UtilVideoclub.generaPeliculaHtml(pelicula);
+      }
+
+    });
+    document.getElementById('contenedor').innerHTML = html;
+
+    localStorage.setItem("anio", selectAnioValue);
+
+  }
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Side</title>
+</head>
+
+<body id="cuerpo" onload="inicioPagina()">
+
+  <form action="#">
+    <label for="anadir">
+      <h2>Tareas para hoy:</h2>
+    </label>
+    <textarea name="txtTarea" id="txtTarea"></textarea>
+    <input type="button" value="Añadir Tarea/s" onclick="anadirTareas()" title="Añade tareas separadas por comas">
+    <button type="button" name="btnLimpiar" id="btnLimpiar" onclick="limpiarTareas()">Limpiar</button>
+  </form>
+
+  <ul id="listaTareas">
+  </ul>
+
+  <label for="selectorHumor">
+    <h2>¿Como estas de humor?</h2>
+  </label>
+  <select id="selectorHumor" onchange="seleccionarHumor(this.value)">
+    <option value="nifunifa" selected="selected">Ni fu ni fa</option>
+    <option value="feliz">Feliz</option>
+    <option value="cabreado">Cabreado</option>
+  </select>
+
+
+</body>
+
+
+<script type="text/javascript">
+  var tareas = ["Consultar mi email"];
+
+  function inicioPagina() {
+
+    refrescaListaTareas();
+  }
+
+  function anadirTareas(tarea) {
+    let valueTxtTarea = document.getElementById('txtTarea').value;
+
+    if (valueTxtTarea == '') {
+      alert('Introduzca un nombre para la tarea');
+      console.error('Introduzca un nombre para la tarea');
+    } else {
+      let arrayTareas = valueTxtTarea.split(',');
+      for (var i in arrayTareas) {
+        tareas.push(arrayTareas[i]);
+      }
+      console.log("Array Tareas=" + arrayTareas);
+    }
+    refrescaListaTareas();
+  }
+
+  function limpiarTareas() {
+    tareas = [];
+    refrescaListaTareas();
+  }
+
+  function refrescaListaTareas() {
+    var htmlListaTareas = "";
+
+    for (var i = 0; i < tareas.length; i++) {
+      htmlListaTareas += '<li>' + tareas[i] + '</li>';
+    }
+
+    document.getElementById('listaTareas').innerHTML = htmlListaTareas;
+  }
+
+  function seleccionarHumor(valueSelect) {
+    console.log("El valor seleccionad es:" + valueSelect);
+    var elementoBody = document.getElementById('cuerpo');
+    console.log("El elemento body recuperado: " + elementoBody);
+    if (valueSelect === "feliz")
+      elementoBody.style.cssText = 'background-color:green';
+    if (valueSelect === "cabreado")
+      elementoBody.style.cssText = 'background-color:red';
+    if (valueSelect === "nifunifa")
+      elementoBody.style.cssText = 'background-color:initial';
+
+  }
+</script>
+
+</html>

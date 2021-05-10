@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Body</title>
+
+</head>
+
+<body onload="mostrarListaAsignaturas()">
+  <h1 id="titulo"></h1>
+  <ul id="listaAsignaturas"></ul>
+</body>
+
+
+<script type="text/javascript">
+  var asignatura1 = {
+    codigo: "DWEC",
+    nombre: "Desarrollo Web Entorno cliente",
+    horas: 165
+  };
+
+  var asignatura2 = {
+    codigo: "DIW",
+    nombre: "Desarrollo interfces",
+    horas: 165
+  };
+
+  var arrayAsignaturas = [asignatura1, asignatura2];
+
+  function mostrarListaAsignaturas() {
+    var htmlDeLista = "";
+
+    for (var i = 0; i < arrayAsignaturas.length; i++) {
+      htmlDeLista += "<li>" + arrayAsignaturas[i].codigo + "</li>";
+    }
+
+    document.getElementById('listaAsignaturas').innerHTML = htmlDeLista;
+
+  }
+</script>
+
+
+</html>

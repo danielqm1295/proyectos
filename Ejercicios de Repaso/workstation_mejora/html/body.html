@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Body</title>
+</head>
+
+<body onload="cargarDatos()">
+    <h1 id="titulo"></h1>
+    <table id="tablaAsignaturas" border="2px">
+    </table>
+</body>
+
+<script type="text/javascript">
+    var asignaturas = [ {
+        codigo: "DWEC",
+        nombre: "Desarrollo Web Entorno cliente",
+        horas: 165,
+        recursos: ['http://www.w3schools.com/js/DEFAULT.asp',
+            'http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference'
+        ]
+    }, {
+        codigo: "DIW",
+        nombre: "Desarrollo Interfaces Web",
+        horas: 165,
+        recursos: ['http://www.w3schools.com/w3css/defaulT.asp',
+            'http://developer.mozilla.org/en-US/docs/Web/CSS/Reference',
+        ]
+      }
+    ];
+
+    /*Funcion invocada al cargar la pagina*/
+    function cargarDatos() {
+        construirTitulo();
+        generarTabla();
+    }
+
+    /* Funcion que rellena el html de la tabla con los datos de las asignaturas
+     */
+    function generarTabla() {
+
+        let htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th></tr>";
+        for (var i = 0; i < asignaturas.length; i++) {
+
+            let asig = asignaturas[i];
+            console.log(asig);
+
+            // Generamos el html para la celda que va a contener el nombre de la asignatura //
+            let celdaNombre = "<td>" + asig.codigo + " - " + asig.nombre + "</td>";
+
+            // Generamos el html para la celda que va a contener los recursos de la asignatura //
+            let celdaRecursos = "<td><ul>";
+            for (var j = 0; j < asig.recursos.length; j++) {
+
+                celdaRecursos += "<li><a  target='_blank' href=" + asig.recursos[j] + ">" + asig.recursos[j] + "</a></li>";
+            }
+            celdaRecursos += "</ul></td>";
+
+            htmlTabla += "<tr>" + celdaNombre + celdaRecursos + "</tr>";
+        }
+        console.log(htmlTabla);
+        document.getElementById('tablaAsignaturas').innerHTML = htmlTabla;
+    }
+
+
+    /* Modifica el titulo con la suma de las horas de las asignaturas */
+    function construirTitulo() {
+        var sumaHoras = 0;
+        for (var i = 0; i < asignaturas.length; i++) {
+            let asignatura = asignaturas[i];
+            sumaHoras += asignatura.horas;
+        }
+        document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";
+    }
+</script>
+
+</html>

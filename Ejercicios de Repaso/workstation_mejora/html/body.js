@@ -37,8 +37,7 @@ tecnologiasDIW = ["HTML", "CSS"];
 
 var SI = new AsignaturaInformatica(
     "SI",
-    "Sistemas informaticos", 100,
-    ""
+    "Sistemas informaticos", 100, "https://www.cesareox.com/docencia/simm/", 1,  
 )
 
 // Asignaturas de segundo

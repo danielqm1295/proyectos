@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Body</title>
+    <script src="body.js"></script>
 </head>
 
 <body onload="cargarDatos()">
@@ -13,23 +14,6 @@
 </body>
 
 <script type="text/javascript">
-    var asignaturas = [ {
-        codigo: "DWEC",
-        nombre: "Desarrollo Web Entorno cliente",
-        horas: 165,
-        recursos: ['http://www.w3schools.com/js/DEFAULT.asp',
-            'http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference'
-        ]
-    }, {
-        codigo: "DIW",
-        nombre: "Desarrollo Interfaces Web",
-        horas: 165,
-        recursos: ['http://www.w3schools.com/w3css/defaulT.asp',
-            'http://developer.mozilla.org/en-US/docs/Web/CSS/Reference',
-        ]
-      }
-    ];
-
     /*Funcion invocada al cargar la pagina*/
     function cargarDatos() {
         construirTitulo();
@@ -40,24 +24,35 @@
      */
     function generarTabla() {
 
-        let htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th></tr>";
+        var htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th><th>Tecnologias</th></tr>";
         for (var i = 0; i < asignaturas.length; i++) {
 
-            let asig = asignaturas[i];
-            console.log(asig);
+            var asig = asignaturas[i];
 
             // Generamos el html para la celda que va a contener el nombre de la asignatura //
-            let celdaNombre = "<td>" + asig.codigo + " - " + asig.nombre + "</td>";
+            var celdaNombre = "<td>" + asig.codigo + " - " + asig.nombre + "</td>";
 
             // Generamos el html para la celda que va a contener los recursos de la asignatura //
-            let celdaRecursos = "<td><ul>";
+            var celdaRecursos = "<td><ul>";
             for (var j = 0; j < asig.recursos.length; j++) {
 
                 celdaRecursos += "<li><a  target='_blank' href=" + asig.recursos[j] + ">" + asig.recursos[j] + "</a></li>";
             }
             celdaRecursos += "</ul></td>";
 
-            htmlTabla += "<tr>" + celdaNombre + celdaRecursos + "</tr>";
+            // Generamos el html para la celda que va a contener las tecnologias
+
+            if (asig.tecnologias != undefined) {
+
+                var celdaTecnologias = "<td><ul>";
+                for (var j = 0; j < asig.tecnologias.length; j++) {
+
+                    celdaTecnologias += "<li>" + asig.tecnologias[j] + "</li>";
+                }
+                celdaTecnologias += "</ul></td>";
+            }
+
+            htmlTabla += "<tr>" + celdaNombre + celdaRecursos + celdaTecnologias + "</tr>";
         }
         console.log(htmlTabla);
         document.getElementById('tablaAsignaturas').innerHTML = htmlTabla;
@@ -68,7 +63,7 @@
     function construirTitulo() {
         var sumaHoras = 0;
         for (var i = 0; i < asignaturas.length; i++) {
-            let asignatura = asignaturas[i];
+            var asignatura = asignaturas[i];
             sumaHoras += asignatura.horas;
         }
         document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";

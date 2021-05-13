@@ -44,7 +44,7 @@ var BB = new AsignaturaInformatica(
 );
 
 var PRO = new AsignaturaInformatica(
-    "PRO", "Programacion", 135, ["https://www.udima.es/es/fundamentos-programacion.html"], 1, "java"
+    "PRO", "Programacion", 135, ["https://www.udima.es/es/fundamentos-programacion.html"], 1, ["java"]
 );
 
 var LMSGI = new AsignaturaInformatica(
@@ -52,7 +52,7 @@ var LMSGI = new AsignaturaInformatica(
 );
 
 var ED = new AsignaturaInformatica(
-    "ED", "Entornos de desarrollo", 50, ["https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado"], 1, "frameworks"
+    "ED", "Entornos de desarrollo", 50, ["https://es.wikipedia.org/wiki/Entorno_de_desarrollo_integrado"], 1, ["framework"]
 );
 
 var FOL = new Asignatura(
@@ -82,7 +82,7 @@ var PDAW = new AsignaturaInformatica(
 );
 
 var FCT = new FTC(
-    "FTC", "Formacion en centros de trabajo", 400, ["https://www.todofp.es/sobre-fp/formacion-en-centros-de-trabajo.html"], 2, "Sofical"
+    "FTC", "Formacion en centros de trabajo", 400, ["https://www.todofp.es/sobre-fp/formacion-en-centros-de-trabajo.html"], 2, ["Sofical"]
 );
 
 var asignaturas = new Array(SI, BB, PRO, LMSGI, ED, FOL, DWEC, DIW, DAW, EIE, PDAW, FCT);

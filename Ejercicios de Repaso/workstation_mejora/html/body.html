@@ -24,7 +24,7 @@
      */
     function generarTabla() {
 
-        var htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th><th>Tecnologias</th></tr>";
+        var htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th><th>Tecnologias</th><th>Empresas</th></tr>";
         for (var i = 0; i < asignaturas.length; i++) {
 
             var asig = asignaturas[i];
@@ -51,7 +51,7 @@
                 }
                 celdaTecnologias += "</ul></td>";
             }
-
+            
             htmlTabla += "<tr>" + celdaNombre + celdaRecursos + celdaTecnologias + "</tr>";
         }
         console.log(htmlTabla);
@@ -64,7 +64,7 @@
         var sumaHoras = 0;
         for (var i = 0; i < asignaturas.length; i++) {
             var asignatura = asignaturas[i];
-            sumaHoras += asignatura.horas;
+            sumaHoras = asignatura.horas + sumaHoras;
         }
         document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";
     }

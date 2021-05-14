@@ -9,6 +9,7 @@
 
 <body onload="cargarDatos()">
     <h1 id="titulo"></h1>
+    <select name="" id=""></select>
     <table id="tablaAsignaturas" border="2px">
     </table>
 </body>
@@ -24,7 +25,7 @@
      */
     function generarTabla() {
 
-        var htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th><th>Tecnologias</th><th>Empresas</th></tr>";
+        var htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th><th>Tecnologias</th></tr>";
         for (var i = 0; i < asignaturas.length; i++) {
 
             var asig = asignaturas[i];
@@ -42,19 +43,20 @@
 
             // Generamos el html para la celda que va a contener las tecnologias
 
+            var celdaTecnologias = "";
+
             if (asig.tecnologias != undefined) {
 
-                var celdaTecnologias = "<td><ul>";
+                celdaTecnologias = "<td><ul>";
                 for (var j = 0; j < asig.tecnologias.length; j++) {
 
                     celdaTecnologias += "<li>" + asig.tecnologias[j] + "</li>";
                 }
                 celdaTecnologias += "</ul></td>";
             }
-            
+
             htmlTabla += "<tr>" + celdaNombre + celdaRecursos + celdaTecnologias + "</tr>";
         }
-        console.log(htmlTabla);
         document.getElementById('tablaAsignaturas').innerHTML = htmlTabla;
     }
 

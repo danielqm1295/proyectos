@@ -9,7 +9,10 @@
 
 <body onload="cargarDatos()">
     <h1 id="titulo"></h1>
-    <select name="" id=""></select>
+    <select name="" id="cursos">
+        <option value="primer año">Curso 1</option>
+        <option value="segundo año">Curso 2</option>
+    </select><br><br>
     <table id="tablaAsignaturas" border="2px">
     </table>
 </body>
@@ -60,8 +63,8 @@
         document.getElementById('tablaAsignaturas').innerHTML = htmlTabla;
     }
 
-
     /* Modifica el titulo con la suma de las horas de las asignaturas */
+
     function construirTitulo() {
         var sumaHoras = 0;
         for (var i = 0; i < asignaturas.length; i++) {
@@ -71,5 +74,4 @@
         document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";
     }
 </script>
-
 </html>

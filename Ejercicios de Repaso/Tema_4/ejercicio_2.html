@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>botones</title>
+</head>
+
+<style>
+    .visible {
+        visibility: visible;
+    }
+    
+    .invisible {
+        visibility: hidden;
+    }
+</style>
+
+<body onload="iniciar()">
+
+    <button onclick="ocultar()">ocultar DIV</button>
+    <button onclick="mostrar()">mostrar DIV</button>
+
+    <script>
+        function iniciar() {
+            var div = document.createElement("div");
+            div.id = "contenedor";
+
+            var parrafo = document.createElement("p");
+            parrafo.innerHTML = "texto del parrafo";
+
+            var input = document.createElement("input");
+            input.type = "checkbox";
+
+            document.body.appendChild(div);
+            div.appendChild(parrafo);
+            div.appendChild(input);
+
+            for (let index = 0; index < 50; index++) {
+                var boton = document.createElement("button");
+                boton.textContent = "boton" + index;
+                div.appendChild(boton);
+            }
+        }
+
+        function ocultar() {
+            var div = document.getElementById("contenedor");
+            div.className = "invisible";
+        }
+
+        function mostrar() {
+            var div = document.getElementById("contenedor");
+            div.className = "visible";
+        }
+    </script>
+
+</body>
+
+</html>

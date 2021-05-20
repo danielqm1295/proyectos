@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de comunidades</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    var comunidades = ["Andalucía", "Aragón", "Canarias", "Cantabria", "Castilla y León",
+        "Castilla-La Mancha", "Cataluña", "Ceuta", "Comunidad Valenciana", "Comunidad de Madrid",
+        "Extremadura", "Galicia", "Islas Baleares", "La Rioja", "Melilla", "Navarra", "País Vasco",
+        "Principado de Asturias", "Región de Murcia"
+    ];
+
+    var select = document.createElement("select");
+    document.body.appendChild(select);
+    for (let index = 0; index < comunidades.length; index++) {
+        const ArrayComunidades = comunidades[index];
+        var option = document.createElement("option");
+        option.value = ArrayComunidades;
+        option.text = ArrayComunidades;
+        select.appendChild(option);
+    }
+
+    select.addEventListener("change", () => {
+        alert("Has seleccionado la opcion " + select.value);
+    }, false)
+</script>

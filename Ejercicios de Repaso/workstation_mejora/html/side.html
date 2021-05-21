@@ -35,6 +35,7 @@
     var tareas = ["Consultar mi email"];
 
     function inicioPagina() {
+        cargartareasLocalStorage();
         refrescaListaTareas();
     }
 
@@ -52,6 +53,7 @@
             console.log("Array Tareas=" + arrayTareas);
         }
         refrescaListaTareas();
+        guardartareaslocalStorage();
     }
 
     function limpiarTareas() {
@@ -86,7 +88,7 @@
     }
 
     function guardartareaslocalStorage() {
-        localStorage.setItem("tareas");
+        localStorage.setItem("tareas", JSON.stringify(tareas));
     }
 </script>
 

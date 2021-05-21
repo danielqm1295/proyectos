@@ -9,9 +9,10 @@
 
 <body onload="cargarDatos()">
     <h1 id="titulo"></h1>
-    <select name="" id="cursos">
-        <option value="primer año">Curso 1</option>
-        <option value="segundo año">Curso 2</option>
+    <select name="" id="cursos" onchange="cursos()">
+        <option value="0">Todos los cursos</option>
+        <option value="1">Curso 1</option>
+        <option value="2">Curso 2</option>
     </select><br><br>
     <table id="tablaAsignaturas" border="2px">
     </table>
@@ -22,12 +23,12 @@
     /*Funcion invocada al cargar la pagina*/
     function cargarDatos() {
         construirTitulo();
-        generarTabla();
+        generarTabla(0);
     }
 
     /* Funcion que rellena el html de la tabla con los datos de las asignaturas
      */
-    function generarTabla() {
+    function generarTabla(cursoSeleccionado) {
 
         var htmlTabla = "<tr><th>Asignatura</th><th>Recursos</th><th>Tecnologias</th></tr>";
         for (var i = 0; i < asignaturas.length; i++) {
@@ -59,7 +60,9 @@
                 celdaTecnologias += "</ul></td>";
             }
 
-            htmlTabla += "<tr>" + celdaNombre + celdaRecursos + celdaTecnologias + "</tr>";
+            if (asig.curso == cursoSeleccionado || cursoSeleccionado == 0) {
+                htmlTabla += "<tr>" + celdaNombre + celdaRecursos + celdaTecnologias + "</tr>";
+            }
         }
         document.getElementById('tablaAsignaturas').innerHTML = htmlTabla;
     }
@@ -73,6 +76,13 @@
             sumaHoras = asignatura.horas + sumaHoras;
         }
         document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";
+    }
+
+    function cursos() {
+        var cursoSeleccionado = document.getElementById("cursos").value;
+        console.log(cursoSeleccionado);
+        cursoSeleccionado = Number(cursoSeleccionado);
+        generarTabla(cursoSeleccionado)
     }
 </script>
 

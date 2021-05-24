@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="txtNombre">
+            Nombre: <input type="text" id="txtNombre" maxlength="11">
+        </label>
+        <label for="txtApellidos">
+            Apellidos: <input type="text" id="txtApellidos">
+        </label>
+        <label for="txtMail">
+            Mail: <input type="text" id="txtMail">
+        </label>
+        <button type="button" id="botonValidar" onclick="validar()">Validar</button>
+        <p id="mensajeError">
+        </p>
+    </form>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+
+        var mensaje = "";
+        //validar mensaje
+
+        var nombre = document.getElementById("txtNombre").value;
+
+        if (nombre == "") {
+            mensaje = mensaje + "El nombre es obligatorio<br>";
+        } else if (!(/^[a-zA-Z ]*$/.test(nombre))) {
+            mensaje = mensaje + "el nombre solo acepta letras<br>";
+        }
+
+        //validar apellidos
+
+        var apellidos = document.getElementById("txtApellidos").value
+
+        if (apellidos == "") {
+            mensaje = mensaje + "El Apellido es obligatorio<br>";
+        } else if (!(/^[a-zA-Z ]*$/.test(apellidos))) {
+            mensaje = mensaje + "el Apellido solo acepta letras<br>";
+        }
+
+        //validar mail   
+
+        var mail = document.getElementById("txtMail").value;
+
+        if (!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(mail))) {
+            mensaje = mensaje + "utilice un formato correcto parea el MAIL";
+        }
+
+        document.getElementById("mensajeError").innerHTML = mensaje;
+    }
+</script>
+
+<style>
+    p {
+        color: teal;
+    }
+</style>

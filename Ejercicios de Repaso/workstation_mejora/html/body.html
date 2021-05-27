@@ -69,20 +69,25 @@
 
     /* Modifica el titulo con la suma de las horas de las asignaturas */
 
-    function construirTitulo() {
+    function construirTitulo(cursoSeleccionado) {
         var sumaHoras = 0;
+
         for (var i = 0; i < asignaturas.length; i++) {
             var asignatura = asignaturas[i];
-            sumaHoras = asignatura.horas + sumaHoras;
+            if (asignatura.curso == cursoSeleccionado || cursoSeleccionado == 0) {
+                sumaHoras = sumaHoras + asignatura.horas;
+            }
         }
+
+
         document.getElementById('titulo').innerHTML = "Recursos DAW (" + sumaHoras + "h)";
     }
 
     function cursos() {
         var cursoSeleccionado = document.getElementById("cursos").value;
-        console.log(cursoSeleccionado);
         cursoSeleccionado = Number(cursoSeleccionado);
-        generarTabla(cursoSeleccionado)
+        generarTabla(cursoSeleccionado);
+        construirTitulo(cursoSeleccionado);
     }
 </script>
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="getUsuarios()">
+
+</body>
+
+</html>
+
+<script>
+    function getUsuarios() {
+        // consultar el JSON con los usuarios del servidor //
+        // enviando una peticion GET a https://reqres.in/api/users//
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() { // función callback (procesa la respuesta) //
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText); // mostramos la respuesta por log de consola //
+                var response = JSON.parse(this.responseText); // transforma el texto en un objeto //
+                console.dir(response);
+
+                var arrayUsuarios = response.data;
+                for (let index = 0; index < arrayUsuarios.length; index++) {
+                    const usuario = arrayUsuarios[index];
+
+                    var h1 = document.createElement("h1");
+                    h1.textContent = usuario.first_name;
+                    document.body.appendChild(h1);
+
+                    var h2 = document.createElement("h2");
+                    h2.innerHTML = usuario.email; // funciona tambien con innerHTML en vez de textContent
+                    document.body.appendChild(h2);
+
+                    var img = document.createElement("img");
+                    img.src = usuario.avatar;
+                    document.body.appendChild(img);
+                }
+            }
+        };
+        xmlhttp.open("GET", "https://reqres.in/api/users", true); // true indica peticion async //
+        xmlhttp.send();
+    }
+</script>

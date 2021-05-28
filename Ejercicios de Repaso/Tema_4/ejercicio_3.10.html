@@ -11,15 +11,26 @@
 <body>
     <form>
         <label for="txtNombre">
-            Nombre: <input type="text" id="txtNombre" maxlength="11">
-        </label>
+            Nombre: <input type="text" id="txtNombre" maxlength="11" onclick="validar()">
+        </label><br><br>
         <label for="txtApellidos">
-            Apellidos: <input type="text" id="txtApellidos">
-        </label>
+            Apellidos: <input type="text" id="txtApellidos" onclick="validar()">
+        </label><br><br>
         <label for="txtMail">
-            Mail: <input type="text" id="txtMail">
-        </label>
-        <button type="button" id="botonValidar" onclick="validar()">Validar</button>
+            Mail: <input type="text" id="txtMail" onclick="validar()">
+        </label><br><br>
+        <label for="selectComunidad">
+            Comunidad:<select name="" id="selectComunidad" onclick="validar()">
+                <option value="0">Seleccione comunidad</option>
+                <option value="Asturias">Asturias</option>
+                <option value="Madrid">Madrid</option>
+                <option value="Barcelona">Barcelona</option>
+            </select>
+        </label><br><br>
+        <label for="checkConforme">
+            <input type="checkbox" id="checkConforme" onclick="validar()">
+        </label><br><br>
+        <button type="submit" id="botonGuardar" disabled>Guardar</button>
         <p id="mensajeError">
         </p>
     </form>
@@ -56,7 +67,28 @@
         var mail = document.getElementById("txtMail").value;
 
         if (!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(mail))) {
-            mensaje = mensaje + "utilice un formato correcto parea el MAIL";
+            mensaje = mensaje + "utilice un formato correcto parea el MAIL<br>";
+        }
+
+        //validar check
+
+        var checkConforme = document.getElementById("checkConforme").checked;
+        if (checkConforme == false) {
+            mensaje = mensaje + "Confirme todos los datos<br>";
+        }
+
+        //validad el select de las comunidades
+
+        var selectComunidad = document.getElementById("selectComunidad").value;
+        if (selectComunidad == 0) {
+            mensaje = mensaje + "seleccione una comunidad";
+        }
+
+        //Habilitar el boton de guardar
+
+        if (mensaje == "") {
+            var botonGuardar = document.getElementById("botonGuardar");
+            botonGuardar.disabled = false;
         }
 
         document.getElementById("mensajeError").innerHTML = mensaje;
@@ -65,6 +97,6 @@
 
 <style>
     p {
-        color: teal;
+        color: goldenrod;
     }
 </style>

@@ -30,7 +30,7 @@
         parrafo.innerHTML = "texto del parrafo";
 
         var input = document.createElement("input");
-        input.type = "checkbox";
+        input.type = "text";
 
         document.body.appendChild(div);
         div.appendChild(parrafo);
@@ -57,6 +57,29 @@
         var div = document.getElementById("contenedor");
         div.className = "visible";
     }
+
+    // ejercicio 2.7 
+
+    var h2 = document.createElement("h2");
+    h2.textContent = "Mi lista de la compra";
+    document.body.appendChild(h2);
+
+    var input = document.createElement("input");
+    input.type = "text";
+    input.id = "txtProducto";
+    document.body.appendChild(input);
+
+    var boton = document.createElement("input");
+    boton.type = "button";
+    boton.value = "Añadir lista";
+    boton.addEventListener("click", (event), false);
+    boton.title = "Añade productos";
+    document.body.appendChild(boton);
+
+    var lista = document.createElement("ul");
+    lista.id = "ullistaCompra";
+    document.body.appendChild(lista);
+    
 </script>
 
 </html>

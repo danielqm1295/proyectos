@@ -72,7 +72,15 @@
     var boton = document.createElement("input");
     boton.type = "button";
     boton.value = "Añadir lista";
-    boton.addEventListener("click", (event), false);
+    boton.addEventListener("click", (event) => {
+        producto = document.getElementById("txtProducto").value;
+        listaProductos = document.getElementById("ullistaCompra");
+
+        for (let index = 0; index < listaProductos.length; index++) {
+            const lista = listaProductos[index];
+            lista.textContent = "<li>" + producto + "</li>";
+        }
+    }, false);
     boton.title = "Añade productos";
     document.body.appendChild(boton);
 
@@ -80,6 +88,7 @@
     lista.id = "ullistaCompra";
     document.body.appendChild(lista);
     
+
 </script>
 
 </html>

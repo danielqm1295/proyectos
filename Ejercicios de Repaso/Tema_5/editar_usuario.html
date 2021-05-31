@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar usuarios</title>
+</head>
+
+<body onload="cargarDatosUsuarios()">
+    <h1>Actualizar usuario</h1>
+    Nombre: <input type="text" id="txtNombre"> Apellidos: <input type="text" id="txtApellido"> Email: <input type="text" id="txtEmail"><br><br>
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="history.back()">Volver</button>
+</body>
+
+</html>
+
+<script>
+    function cargarDatosUsuarios() {
+        // 1. recuperar el id que me envia la pagina del listado en la url
+
+        var params = new URLSearchParams(window.location.search);
+        var idUsuario = params.get('id');
+        console.log(idUsuario)
+
+        // 2. hacer una peticion de consulta(GET) al servidor pasandole el id del usuario y cuando responda recoger los datos y cargarlos al formulario
+
+    }
+</script>

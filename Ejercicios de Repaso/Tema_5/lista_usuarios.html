@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Usuarios</title>
 </head>
 
 <body onload="getUsuarios()">
@@ -41,7 +41,22 @@
                     var img = document.createElement("img");
                     img.src = usuario.avatar;
                     document.body.appendChild(img);
+
+                    // boton para editar a los usuarios
+                    var botonEditar = document.createElement("button");
+                    botonEditar.textContent = "Editar usuarios";
+                    botonEditar.addEventListener("click", () => {
+                        window.location.assign("editar_usuario.html?id=" + usuario.id);
+                    }, false);
+                    document.body.appendChild(botonEditar);
                 }
+
+                var boton = document.createElement("button");
+                boton.textContent = "nuevo usuario";
+                boton.addEventListener("click", () => {
+                    window.location.assign("Usuario_crear.html")
+                }, false);
+                document.body.appendChild(boton)
             }
         };
         xmlhttp.open("GET", "https://reqres.in/api/users", true); // true indica peticion async //

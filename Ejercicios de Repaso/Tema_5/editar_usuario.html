@@ -10,22 +10,62 @@
 
 <body onload="cargarDatosUsuarios()">
     <h1>Actualizar usuario</h1>
+
     Nombre: <input type="text" id="txtNombre"> Apellidos: <input type="text" id="txtApellido"> Email: <input type="text" id="txtEmail"><br><br>
-    <button onclick="guardar()">Guardar</button>
+    <button onclick="ActualizarUsuario()">Guardar</button>
     <button onclick="history.back()">Volver</button>
 </body>
 
 </html>
 
 <script>
+    var idUsuario;
+
+    function ActualizarUsuario() {
+        var nombreUsuario = document.getElementById("txtNombre").value;
+        var apellidousuario = document.getElementById("txtApellido").value;
+        var emailUsuario = document.getElementById("txtEmail").value;
+
+        var usuarioNuevo = {
+                id: idUsuario,
+                email: emailUsuario,
+                first_name: nombreUsuario,
+                last_name: apellidousuario
+            }
+            // 2. hacer una peticion de consulta(GET) al servidor pasandole el id del usuario y cuando responda recoger los datos y cargarlos al formulario
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() { // función callback (procesa la respuesta) //
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText); // mostramos la respuesta por log de consola //
+                var response = JSON.parse(this.responseText); // transforma el texto en un objeto //
+                alert("usuario actualizado");
+            }
+        }
+        xmlhttp.open("PUT", "https://reqres.in/api/users/" + idUsuario, true); // true indica peticion async //
+        xmlhttp.send();
+    }
+
     function cargarDatosUsuarios() {
         // 1. recuperar el id que me envia la pagina del listado en la url
-
         var params = new URLSearchParams(window.location.search);
-        var idUsuario = params.get('id');
-        console.log(idUsuario)
+        idUsuario = params.get('id');
+        console.log(idUsuario);
 
         // 2. hacer una peticion de consulta(GET) al servidor pasandole el id del usuario y cuando responda recoger los datos y cargarlos al formulario
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() { // función callback (procesa la respuesta) //
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText); // mostramos la respuesta por log de consola //
+                var response = JSON.parse(this.responseText); // transforma el texto en un objeto //
+                var datosUsuario = response.data;
 
+                // 3. cargo los datos del usuario en el formulario
+                document.getElementById("txtNombre").value = datosUsuario.first_name;
+                document.getElementById("txtApellido").value = datosUsuario.last_name;
+                document.getElementById("txtEmail").value = datosUsuario.email;
+            }
+        }
+        xmlhttp.open("GET", "https://reqres.in/api/users/" + idUsuario, true); // true indica peticion async //
+        xmlhttp.send();
     }
 </script>

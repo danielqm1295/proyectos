@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crear usuarios</title>
+</head>
+
+<body>
+    <h1>Nuevo Usuario</h1>
+    Nombre: <input type="text" id="txtNombre"> Apellidos: <input type="text" id="txtApellido"> Email: <input type="text" id="txtEmail"><br><br>
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="history.back()">Volver</button>
+</body>
+
+</html>
+
+<script>
+    function guardar() {
+        // peticion POST al servidor enviando los datos del formulario
+        var nombreUsuario = document.getElementById("txtNombre").Value;
+        var apellidousuario = document.getElementById("txtApellido").Value;
+        var emailUsuario = document.getElementById("txtEmail").Value;
+
+        var usuarioNuevo = {
+            email: emailUsuario,
+            first_name: nombreUsuario,
+            last_name: apellidousuario
+        }
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 201) {
+                var response = JSON.parse(this.responseText);
+                alert("usuario creado en el backend" + response.id);
+                history.back();
+            }
+        }
+        xmlhttp.open("POST", "https://reqres.in/api/users", true);
+        xmlhttp.send();
+    }
+</script>

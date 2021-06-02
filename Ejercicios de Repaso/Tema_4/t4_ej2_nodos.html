@@ -72,22 +72,20 @@
     var boton = document.createElement("input");
     boton.type = "button";
     boton.value = "Añadir lista";
-    boton.addEventListener("click", (event) => {
-        producto = document.getElementById("txtProducto").value;
-        listaProductos = document.getElementById("ullistaCompra");
 
-        for (let index = 0; index < listaProductos.length; index++) {
-            const lista = listaProductos[index];
-            lista.textContent = "<li>" + producto + "</li>";
-        }
+    boton.addEventListener("click", (event) => {
+        var li = document.createElement("li");
+        var productos = document.getElementById("txtProducto").value;
+        li.innerHTML = productos;
+        lista.appendChild(li);
     }, false);
+
     boton.title = "Añade productos";
     document.body.appendChild(boton);
 
     var lista = document.createElement("ul");
     lista.id = "ullistaCompra";
     document.body.appendChild(lista);
-    
 
 </script>
 

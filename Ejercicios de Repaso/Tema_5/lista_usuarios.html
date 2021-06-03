@@ -6,15 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-<body onload="getUsuarios()">
+<body onload="getUsuariosJquery()">
 
 </body>
 
 </html>
 
 <script>
+    function getUsuariosJquery() {
+        $.get("https://reqres.in/api/users", function(data, status) {
+
+            var arrayUsuarios = data.data;
+            for (let index = 0; index < arrayUsuarios.length; index++) {
+                const usuario = arrayUsuarios[index];
+
+                var h1 = document.createElement("h1");
+                h1.textContent = usuario.first_name;
+                document.body.appendChild(h1);
+
+                var h2 = document.createElement("h2");
+                h2.innerHTML = usuario.email; // funciona tambien con innerHTML en vez de textContent
+                document.body.appendChild(h2);
+
+                var img = document.createElement("img");
+                img.src = usuario.avatar;
+                document.body.appendChild(img);
+
+                // boton para editar a los usuarios
+                var botonEditar = document.createElement("button");
+                botonEditar.textContent = "Editar usuarios";
+                botonEditar.addEventListener("click", () => {
+                    window.location.assign("editar_usuario.html?id=" + usuario.id);
+                }, false);
+                document.body.appendChild(botonEditar);
+            }
+
+            var boton = document.createElement("button");
+            boton.textContent = "nuevo usuario";
+            boton.addEventListener("click", () => {
+                window.location.assign("Usuario_crear.html")
+            }, false);
+            document.body.appendChild(boton);
+        });
+    }
+
     function getUsuarios() {
         // consultar el JSON con los usuarios del servidor //
         // enviando una peticion GET a https://reqres.in/api/users//
@@ -56,7 +94,7 @@
                 boton.addEventListener("click", () => {
                     window.location.assign("Usuario_crear.html")
                 }, false);
-                document.body.appendChild(boton)
+                document.body.appendChild(boton);
             }
         };
         xmlhttp.open("GET", "https://reqres.in/api/users", true); // true indica peticion async //

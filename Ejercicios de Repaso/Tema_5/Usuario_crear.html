@@ -6,18 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>crear usuarios</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
     <h1>Nuevo Usuario</h1>
     Nombre: <input type="text" id="txtNombre"> Apellidos: <input type="text" id="txtApellido"> Email: <input type="text" id="txtEmail"><br><br>
-    <button onclick="guardar()">Guardar</button>
+    <button onclick="guardarJquery()">Guardar</button>
     <button onclick="history.back()">Volver</button>
 </body>
 
 </html>
 
 <script>
+    function guardarJquery() {
+
+        var nombreUsuario = document.getElementById("txtNombre").Value;
+        var apellidousuario = document.getElementById("txtApellido").Value;
+        var emailUsuario = document.getElementById("txtEmail").Value;
+
+        var usuarioNuevo = {
+            email: emailUsuario,
+            first_name: nombreUsuario,
+            last_name: apellidousuario
+        }
+
+        $.post("https://reqres.in/api/users", usuarioNuevo, function(data, status) {
+            alert("usuario creado con id = " + data.id);
+            // alert("usuario creado: " + JSON.stringify(data));
+            history.back();
+        });
+    }
+
     function guardar() {
         // peticion POST al servidor enviando los datos del formulario
         var nombreUsuario = document.getElementById("txtNombre").Value;

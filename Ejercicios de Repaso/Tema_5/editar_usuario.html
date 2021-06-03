@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>editar usuarios</title>
 </head>
 
-<body onload="cargarDatosUsuarios()">
-    <h1>Actualizar usuario</h1>
+<body onload="cargarDatosUsuariosJquery()">
+    <h1>Editar usuario</h1>
 
     Nombre: <input type="text" id="txtNombre"> Apellidos: <input type="text" id="txtApellido"> Email: <input type="text" id="txtEmail"><br><br>
-    <button onclick="ActualizarUsuario()">Guardar</button>
+    <button onclick="ActualizarUsuarioJquery()">Guardar</button>
     <button onclick="history.back()">Volver</button>
 </body>
 
@@ -20,6 +21,46 @@
 
 <script>
     var idUsuario;
+
+    function cargarDatosUsuariosJquery() {
+        var params = new URLSearchParams(window.location.search);
+        idUsuario = params.get('id');
+
+        $.get("https://reqres.in/api/users/" + idUsuario, function(data, status) {
+            var datosUsuario = data.data;
+            document.getElementById("txtNombre").value = datosUsuario.first_name;
+            document.getElementById("txtApellido").value = datosUsuario.last_name;
+            document.getElementById("txtEmail").value = datosUsuario.email;
+        });
+    }
+
+    function ActualizarUsuarioJquery() {
+        var nombreUsuario = document.getElementById("txtNombre").value;
+        var apellidousuario = document.getElementById("txtApellido").value;
+        var emailUsuario = document.getElementById("txtEmail").value;
+
+        var usuarioNuevo = {
+            id: idUsuario,
+            email: emailUsuario,
+            first_name: nombreUsuario,
+            last_name: apellidousuario
+        };
+
+        $.ajax({
+            url: 'https://reqres.in/api/users/' + usuarioNuevo.id,
+            type: 'PUT',
+            data: usuarioNuevo,
+
+            success: function(response) {
+                // funcion en caso de exito
+                alert("usuario modificado: " + JSON.stringify(response));
+            },
+            error: function(response) {
+                // en caso de error
+                alert("Se ha producido un error en el backend!");
+            }
+        });
+    }
 
     function ActualizarUsuario() {
         var nombreUsuario = document.getElementById("txtNombre").value;

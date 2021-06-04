@@ -11,7 +11,7 @@
 <body>
     <form>
         <label for="txtNombre">
-            Nombre: <input type="text" id="txtNombre" maxlength="11" onclick="validar()">
+            Nombre: <input type="text" id="txtNombre" onclick="validar()">
         </label><br><br>
         <label for="txtApellidos">
             Apellidos: <input type="text" id="txtApellidos" onclick="validar()">
@@ -42,50 +42,60 @@
     function validar() {
 
         var mensaje = "";
-        //validar mensaje
 
+        //validar nombre
         var nombre = document.getElementById("txtNombre").value;
+        var inputNombre = document.getElementById("txtNombre");
+        var inputApellidos = document.getElementById("txtApellidos");
+        var inputmail = document.getElementById("txtMail");
+        var check = document.getElementById("checkConforme");
 
         if (nombre == "") {
             mensaje = mensaje + "El nombre es obligatorio<br>";
+            inputNombre.style.cssText = "border: 1px solid red;";
         } else if (!(/^[a-zA-Z ]*$/.test(nombre))) {
             mensaje = mensaje + "el nombre solo acepta letras<br>";
+        } else if (nombre.length > 10) {
+            mensaje = mensaje + "En el nombre solo se permiten 10 caracteres<br>";
+        } else {
+            inputNombre.style.cssText = "border: 1px solid black;";
         }
 
         //validar apellidos
-
         var apellidos = document.getElementById("txtApellidos").value
 
         if (apellidos == "") {
             mensaje = mensaje + "El Apellido es obligatorio<br>";
+            inputApellidos.style.cssText = "border: 1px solid red;";
         } else if (!(/^[a-zA-Z ]*$/.test(apellidos))) {
             mensaje = mensaje + "el Apellido solo acepta letras<br>";
+        } else if (apellidos.length > 50) {
+            mensaje = mensaje + "En el apellido solo se permiten 50 caracteres<br>";
+        } else {
+            inputApellidos.style.cssText = "border: 1px solid black;";
         }
 
         //validar mail   
-
         var mail = document.getElementById("txtMail").value;
+        if (mail == "") {
 
-        if (!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(mail))) {
+        } else if (!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(mail))) {
             mensaje = mensaje + "utilice un formato correcto parea el MAIL<br>";
+            inputmail.style.cssText = "border: 1px solid red;";
+        } else {
+            inputmail.style.cssText = "border: 1px solid black;";
         }
 
         //validar check
-
         var checkConforme = document.getElementById("checkConforme").checked;
         if (checkConforme == false) {
             mensaje = mensaje + "Confirme todos los datos<br>";
-        }
-
-        //validad el select de las comunidades
-
-        var selectComunidad = document.getElementById("selectComunidad").value;
-        if (selectComunidad == 0) {
-            mensaje = mensaje + "seleccione una comunidad";
+            check.style.cssText = "outline: 1px solid red";
+        } else {
+            check.style.cssText = "outline: 1px solid black";
         }
 
         //Habilitar el boton de guardar
-
         if (mensaje == "") {
             var botonGuardar = document.getElementById("botonGuardar");
             botonGuardar.disabled = false;
@@ -97,6 +107,6 @@
 
 <style>
     p {
-        color: goldenrod;
+        color: red;
     }
 </style>

@@ -12,10 +12,14 @@
 </html>
 
 <script>
-    var boton = document.getElementById("button")
-    boton.addEventListener("click", (event) => {
-    }, false)
-    console.dir(boton);
+    var button = document.getElementById("button").addEventListener("click", (manejadora), false);
+    function manejadora(miEvento) {
+        var evento = window.event;
+        console.log(miEvento.type);
+        console.log(miEvento);
+        console.log(evento);
+    }
+    console.dir(button);
 
     document.addEventListener("keypress", logkey);
     function logkey(e) {

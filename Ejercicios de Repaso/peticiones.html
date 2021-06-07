@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticiones</title>
+</head>
+
+<body onload="peticion()">
+
+</body>
+
+</html>
+
+<script>
+    function peticion() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var array = JSON.parse(this.responseText);
+                for (let index = 0; index < array.length; index++) {
+                    const cerveza = array[index];
+
+                    var h2 = document.createElement("h2");
+                    h2.addEventListener("click", () => {
+                        window.open(cerveza.website_url);
+                    }, false)
+                    h2.textContent = cerveza.name + " (" + cerveza.country + ")";
+                    document.body.appendChild(h2);
+                }
+            }
+        }
+        xmlhttp.open("GET", "https://api.openbrewerydb.org/breweries", true);
+        xmlhttp.send();
+    }
+</script>

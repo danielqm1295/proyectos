@@ -17,9 +17,9 @@
 
 <script>
     function getUsuariosJquery() {
-        $.get("https://reqres.in/api/users", function(data, status) {
+        $.get("https://reqres.in/api/users", function(response, status) {
 
-            var arrayUsuarios = data.data;
+            var arrayUsuarios = response.data;
             for (let index = 0; index < arrayUsuarios.length; index++) {
                 const usuario = arrayUsuarios[index];
 

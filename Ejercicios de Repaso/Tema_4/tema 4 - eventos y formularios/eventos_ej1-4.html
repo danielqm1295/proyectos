@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eventos</title>
 </head>
+
 <body onload="botones()">
     <button id="button">boton del ejercicio 1 y 2</button><br><br>
 </body>
+
 </html>
 
 <script>
     var button = document.getElementById("button").addEventListener("click", (manejadora), false);
+
     function manejadora(miEvento) {
         var evento = window.event;
         console.log(miEvento.type);
         console.log(miEvento);
         console.log(evento);
+        console.log(evento.type);
     }
     console.dir(button);
 
     document.addEventListener("keypress", logkey);
+
     function logkey(e) {
         console.log(e.key);
     }
 
     function botones() {
-        
+
         for (let index = 0; index < 50; index++) {
             var button = document.createElement("button");
-            button.textContent = "boton " + index;  
+            button.textContent = "boton " + index;
             button.addEventListener("click", () => {
                 alert("Has hecho click en el contenedor");
                 alert("Hola, soy el boton " + index);

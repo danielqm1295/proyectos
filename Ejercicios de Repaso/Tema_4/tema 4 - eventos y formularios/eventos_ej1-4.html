@@ -6,20 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eventos</title>
 </head>
-<body>
-    <button id="button">boton</button>
+<body onload="botones()">
+    <button id="button">boton del ejercicio 1 y 2</button><br><br>
 </body>
 </html>
 
 <script>
     var boton = document.getElementById("button")
     boton.addEventListener("click", (event) => {
-
     }, false)
     console.dir(boton);
 
     document.addEventListener("keypress", logkey);
     function logkey(e) {
         console.log(e.key);
+    }
+
+    function botones() {
+        
+        for (let index = 0; index < 50; index++) {
+            var button = document.createElement("button");
+            button.textContent = "boton " + index;  
+            button.addEventListener("click", () => {
+                alert("Has hecho click en el contenedor");
+                alert("Hola, soy el boton " + index);
+            }, false)
+            document.body.appendChild(button);
+        }
     }
 </script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Playas de Gijón</title>
+    <meta charset="UTF-8">
+    <style>
+        img {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body onload="peticion()">
+    <h1 style="border-bottom: 1px solid greenyellow;">Playas de Gijón</h1>
+</body>
+
+</html>
+
+<script>
+    function peticion() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var array = JSON.parse(this.responseText);
+                for (let index = 0; index < array.length; index++) {
+                    const playa = array[index];
+
+                    if (playa.materias == "Playas") {
+                        var h2 = document.createElement("h2");
+                        h2.textContent = playa.titulo;
+                        document.body.appendChild(h2);
+
+                        var img = document.createElement("img");
+                        img.src = playa.imagen;
+                        document.body.appendChild(img);
+                    }
+                }
+            }
+        }
+        xmlhttp.open("GET", "https://opendata.gijon.es/descargar.php?id=749&tipo=JSON", true);
+        xmlhttp.send();
+    }
+</script>

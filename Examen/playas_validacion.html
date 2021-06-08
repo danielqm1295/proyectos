@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Protocolo covid</title>
+    <style>
+        label {
+            display: block;
+            padding: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Reserva de parcela</h1>
+    <form action="playacovid.php">
+
+        <label for="selectPlaya">
+            Playa *: 
+            <select id="selectPlaya">
+                <option value="0">Seleccione la playa..</option>
+                <option value="1">Playa de Peñarrubia</option>
+                <option value="2">Playa de LArbeyal</option>
+                <option value="3">Playa de Estaño</option>
+            </select>
+        </label>
+
+        <label for="inputPersonas">
+            Numero de personas *:<input type="text" placeholder="Numero de personas">
+        </label>
+
+        <label for="checkComprometido">
+            Se compromete a cumplir protocolo Covid *: <input type="checkbox" id="check" >
+        </label>
+
+        <button type="button" id="botonEnviar" onclick="validar()" disabled>Enviar</button>
+    </form>
+</body>
+
+</html>
+
+<script>
+    function validar() {
+        //validar el numero de personas
+        var numeroPersonas = document.getElementById("inputPersonas").value;
+        if (numeroPersonas = "") {
+            alert = ("En el campo numero de personas, es obligatorio");
+        } else if (!(/^[0-9]$/.test(numeroPersonas))) {
+            alert = ("En el campo numero de personas, solo se permiten numeros");
+        } else if (numeroPersonas.length > 5) {
+            alert = ("solo se permiten hasta 4 personas");
+        }
+
+        //validar el check
+        var checkBox = document.getElementById("check");
+        if (checkBox == false) {
+            alert("Es obligatorio marcar el check");
+        }
+
+        //validar el select playa
+        var playa = document.getElementById("selectPlaya").value;
+        if (playa = undefined) {
+            alert = ("es obligatorio elegir una playa");
+        }
+
+        //habilitar boton enviar
+        if (playa.value == 0 || playa.value == "") {
+            var botonEnviar = document.getElementById("botonEnviar")
+            botonEnviar.disabled = false;
+        }
+    }
+</script>

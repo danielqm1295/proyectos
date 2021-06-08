@@ -42,14 +42,13 @@
     function validar() {
 
         var mensaje = "";
-
-        //validar nombre
         var nombre = document.getElementById("txtNombre").value;
         var inputNombre = document.getElementById("txtNombre");
         var inputApellidos = document.getElementById("txtApellidos");
         var inputmail = document.getElementById("txtMail");
         var check = document.getElementById("checkConforme");
 
+        //validar nombre
         if (nombre == "") {
             mensaje = mensaje + "El nombre es obligatorio<br>";
             inputNombre.style.cssText = "border: 1px solid red;";
